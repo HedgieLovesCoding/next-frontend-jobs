@@ -9,7 +9,7 @@
     }
 
     async function displayAlert() {
-        if (!(await checkLoggedIn())) {
+        if (!await checkLoggedIn()) {
             alerts.set('Account required to post', 'warning')
             setTimeout(() => alerts.clear(), 1000)
         }
