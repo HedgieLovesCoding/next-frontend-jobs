@@ -14,7 +14,7 @@
     <div class="flex">
         <div class="flex-1">
           <h1 class="text-3xl font-extrabold grid grid-cols-6 justify-evenly w-full">
-              {data.job.title}
+              <span class="w-80">{data.job.title}</span>
               {#if data.job.user == getUserID()}
                   <button on:click={edit} class="btn btn-outline col-start-7 w-24">EDIT</button>
               {/if}

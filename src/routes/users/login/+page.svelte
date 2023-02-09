@@ -35,7 +35,7 @@
     </a>
 </div>
 
-<div class="flex justify-center items-center mt-8">
+<div class="flex justify-center items-center mt-8 mb-0 pb-24">
     <form on:submit={logIn} class="w-1/3">
         <div class="form-control w-full">
             <label class="label" for="username">

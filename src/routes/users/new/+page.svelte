@@ -55,7 +55,7 @@
     </a>
 </div>
 
-<div class="flex justify-center items-center mt-3">
+<div class="flex justify-center items-center mt-3 max-h-full">
     <form on:submit={createUser} class="w-1/3">
         <div class="form-control w-full">
             <label class="label" for="username">

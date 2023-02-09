@@ -1,4 +1,4 @@
-import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public'
+import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 
 export async function load({ fetch }) {
   const response = await fetch(PUBLIC_BACKEND_BASE_URL + '/api/collections/jobs/records');
