@@ -33,6 +33,42 @@
 </script>
 
 <style>
+    .searchBarLight {
+            border-color:black; 
+            border-radius:6px;
+        }
+
+    .searchBarDark {
+        border-color:white; 
+        border-radius:6px;
+    }
+
+    .searchBarLight::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: black;
+        opacity: 1; /* Firefox */
+    }
+
+    .searchBarLight:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: black;
+    }
+
+    .searchBarLight::-ms-input-placeholder { /* Microsoft Edge */
+        color: black;
+    }
+
+    .searchBarDark::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+
+    .searchBarDark:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+    }
+
+    .searchBarDark::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+    }
+
     .switch {
         position: relative;
         display: inline-block;
@@ -94,7 +130,12 @@
 
 <div data-theme="{$themes[1]}" class="navbar bg-base-100 pb-0 pt-0" id="nav">
     <div class="flex-1">
-        <a href="/" class="btn btn-ghost normal-case text-xl">NEXT Jobs</a>
+        <a href="/" class="btn btn-ghost normal-case text-xl mr-2">NEXT Jobs</a>
+        {#if $themes[0] == 'lightMode'}
+            <input type="text" placeholder="Search" class="input input-bordered w-96 searchBarLight" />
+        {:else}
+            <input type="text" placeholder="Search" class="input input-bordered w-96 searchBarDark" />
+        {/if}
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
