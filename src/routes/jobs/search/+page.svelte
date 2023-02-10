@@ -1,7 +1,7 @@
 <script>
 	import humanize from 'humanize-plus'
-	import { getUserID } from './../utils/auth.js'
-	import { themes } from './../utils/theme.js'
+	import { getUserID } from '../../../utils/auth.js'
+	import { themes } from '../../../utils/theme.js'
 	export let data
 </script>
 
