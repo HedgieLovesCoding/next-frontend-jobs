@@ -7,7 +7,12 @@
 
 <Nav />
 
-<div data-theme="{$themes[2]}" class="container w-full mt-0 pt-2 pb-28 max-h-full">
+<div data-theme="{$themes[2]}" class="
+container 
+mt-0 
+pt-2 
+pb-28"
+style="min-width:100%; min-height:93.4vh">
   <Alert />
   <slot />
 </div>
