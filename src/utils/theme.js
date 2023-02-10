@@ -19,11 +19,9 @@ export function toggleTheme() {
     if (getThemeLocalStorage == 'lightMode') {
         themes.setDark()
         localStorage.setItem("theme", 'darkMode')
-        console.log('toggle1')
     } else {
         themes.setLight()
         localStorage.setItem("theme", 'lightMode')
-        console.log('toggle2')
     }
 }
 
