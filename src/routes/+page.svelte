@@ -3,8 +3,6 @@
 	import { getUserID } from '../utils/auth'
 	import { themes } from '../utils/theme.js'
 	export let data
-
-	console.log(data.jobs)
 </script>
 
 <style>
