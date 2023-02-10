@@ -1,7 +1,15 @@
 <script>
 	import humanize from 'humanize-plus'
+	import { getUserID } from '../utils/auth'
+	import { themes } from '../utils/theme.js'
 	export let data
+
+	console.log(data.jobs)
 </script>
+
+<style>
+	.white {filter: brightness(0) invert(1)}
+</style>
 
 <h1 class="text-center text-xl font-bold mt-3">Find Your Next Job</h1>
 
@@ -9,7 +17,32 @@
 	{#each data.jobs as job}
 		<div class="flex flex-col mt-10">
 			<div>
-				<a class="font-bold text-2xl" href="/jobs/{job.id}">{job.title}</a>
+				
+				<a class="indicator" href="/jobs/{job.id}">
+					{#if job.user == getUserID()}
+						{#if $themes[0] == 'darkMode'}
+							<img src="src/img/edit.svg" alt="editable" style="width:23px"
+							class="
+								indicator-item 
+								indicator-top 
+								indicator-end 
+								pl-3 
+								pt-3 
+								white
+								" />
+						{:else}
+							<img src="src/img/edit.svg" alt="editable" style="width:23px"
+							class="
+								indicator-item 
+								indicator-top 
+								indicator-end 
+								pl-3 
+								pt-3
+								" />
+						{/if}
+					{/if}
+					<span class="font-bold text-2xl">{job.title}</span>
+				</a>
 				<div class="text-sm mt-1">
 					{job.employer} . {job.location} .
 					<span class="text-sm"
