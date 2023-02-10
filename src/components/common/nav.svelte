@@ -3,6 +3,7 @@
     import { goto } from '$app/navigation';
     import { alerts } from "../../utils/alert.js";
     import { themes, toggleTheme } from '../../utils/theme.js';
+    import { currentSearch } from "../../utils/search.js";
 
     function logOutClick() {
         logOut()
@@ -29,6 +30,18 @@
                 styleElem.innerHTML = "#slider:before {background-color: black;}"
                 break;
         }
+    }
+
+    function activeSearchBar(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            currentSearch.set(document.getElementById("searchBar").value)
+            document.getElementById("searchButton").click();
+        }
+    }
+
+    function startSearch() {
+        goto('/' + $currentSearch.content)
     }
 </script>
 
@@ -144,10 +157,11 @@
     <div class="flex-1">
         <a href="/" class="btn btn-ghost normal-case text-xl mr-2 hoverMenu">NEXT Jobs</a>
         {#if $themes[0] == 'lightMode'}
-            <input type="text" placeholder="Search" class="input input-bordered w-96 searchBarLight" />
+            <input id="searchBar" on:click={activeSearchBar} on:keyup={activeSearchBar} type="text" placeholder="{$currentSearch.placeHolder}" value={$currentSearch.content} class="input input-bordered w-96 searchBarLight" />
         {:else}
-            <input type="text" placeholder="Search" class="input input-bordered w-96 searchBarDark" />
+            <input id="searchBar" on:click={activeSearchBar} on:keyup={activeSearchBar} type="text" placeholder="{$currentSearch.placeHolder}" value={$currentSearch.content} class="input input-bordered w-96 searchBarDark" />
         {/if}
+        <button id="searchButton" on:click={startSearch} class="hidden"></button>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
