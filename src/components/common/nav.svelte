@@ -33,6 +33,18 @@
 </script>
 
 <style>
+    .btn {
+        border-radius: 6px;
+    }
+
+    .btn-ghost:hover {
+        border-radius: 6px;
+    }
+    
+    .btn-ghost:active {
+        border-radius: 6px;
+    }
+
     .searchBarLight {
             border-color:black; 
             border-radius:6px;
@@ -130,7 +142,7 @@
 
 <div data-theme="{$themes[1]}" class="navbar bg-base-100 pb-0 pt-0" id="nav">
     <div class="flex-1">
-        <a href="/" class="btn btn-ghost normal-case text-xl mr-2">NEXT Jobs</a>
+        <a href="/" class="btn btn-ghost normal-case text-xl mr-2 hoverMenu">NEXT Jobs</a>
         {#if $themes[0] == 'lightMode'}
             <input type="text" placeholder="Search" class="input input-bordered w-96 searchBarLight" />
         {:else}
